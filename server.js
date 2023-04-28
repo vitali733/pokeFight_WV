@@ -1,13 +1,12 @@
 const express = require('express')
+var cors = require('cors')
 const app = express()
-const port = 3000
+const port = 8000
 const pokeRouter = require('./routes/pokeRoutes.js')
 const {fetchPokemonData} = require('./controllers/pokeControllers.js')
 console.log('starting server.js!')
 
-//fetchPokemonData()
-//console.log(getPokedexData())
-
+app.use(cors()) //enable all cors requests
 
 app.use('/pokemon', pokeRouter);
 
